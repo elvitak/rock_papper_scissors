@@ -15,7 +15,7 @@ describe("User visits website and", () => {
   });
 
   it("is expected to be able to choose scissors", () => {
-    cy.get("[data-cy=scissors]").click();
+    cy.get("[data-cy=scissors_btn]").click();
     cy.get("[data-cy=user_choice]").should(
       "contain",
       "Your choice is: Scissors"
