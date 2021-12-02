@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 describe("User visits website and", () => {
-  beforeEach(() => {
+  before(() => {
     cy.visit("/");
   });
 
