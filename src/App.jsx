@@ -6,6 +6,8 @@ const App = () => {
   const [userChoice, setUserChoice] = useState();
   const [computerChoice, setComputerChoice] = useState();
   const [result, setResult] = useState(null);
+  const [userScore, setUserScore] = useState(0);
+  const [computerScore, setComputerScore] = useState(0);
 
   useEffect(() => {
     findOutWhoIsTheWinner();
@@ -24,16 +26,22 @@ const App = () => {
   const findOutWhoIsTheWinner = () => {
     if (userChoice === "Rock" && computerChoice === "Scissors") {
       setResult("Congratulations! You won!");
+      setUserScore(userScore + 1);
     } else if (userChoice === "Paper" && computerChoice === "Scissors") {
       setResult("You lost");
+      setComputerScore(computerScore + 1);
     } else if (userChoice === "Scissors" && computerChoice === "Paper") {
       setResult("Congratulations! You won!");
+      setUserScore(userScore + 1);
     } else if (userChoice === "Rock" && computerChoice === "Paper") {
       setResult("You lost");
+      setComputerScore(computerScore + 1);
     } else if (userChoice === "Paper" && computerChoice === "Rock") {
       setResult("Congratulations! You won!");
+      setUserScore(userScore + 1);
     } else if (userChoice === "Scissors" && computerChoice === "Rock") {
       setResult("You lost");
+      setComputerScore(computerScore + 1);
     } else {
       setResult("It's a draw");
     }
@@ -41,6 +49,8 @@ const App = () => {
 
   return (
     <>
+      <h1 data-cy="user_score">{userScore}</h1>
+      <h1 data-cy="computer_score">{computerScore}</h1>
       <h1 data-cy="user_choice">Your choice is: {userChoice}</h1>
       <h1 data-cy="computerChoice">
         Your Imaginary Friend chose: {computerChoice}
