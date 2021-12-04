@@ -16,6 +16,8 @@ describe("User", () => {
       "Your Imaginary Friend chose: Rock"
     );
     cy.get("[data-cy=results]").should("contain", "Congratulations! You won!");
+    cy.get("[data-cy=user_score]").should("contain", 1);
+    cy.get("[data-cy=computer_score]").should("contain", 0);
   });
 
   it("is expected to lose when chooses scissors and computer chooses rock", () => {
@@ -29,6 +31,8 @@ describe("User", () => {
       "Your Imaginary Friend chose: Rock"
     );
     cy.get("[data-cy=results]").should("contain", "You lost");
+    cy.get("[data-cy=user_score]").should("contain", 0);
+    cy.get("[data-cy=computer_score]").should("contain", 1);
   });
 
   it("is expected to see result as a draw when chooses rock and computer chooses rock", () => {
@@ -39,5 +43,7 @@ describe("User", () => {
       "Your Imaginary Friend chose: Rock"
     );
     cy.get("[data-cy=results]").should("contain", "It's a draw");
+    cy.get("[data-cy=user_score]").should("contain", 0);
+    cy.get("[data-cy=computer_score]").should("contain", 0);
   });
 });
