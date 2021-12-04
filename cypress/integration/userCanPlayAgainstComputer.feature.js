@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 describe("User", () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit("http://localhost:3000", {
       onBeforeLoad(window) {
         cy.stub(window.Math, "floor").returns(0);
