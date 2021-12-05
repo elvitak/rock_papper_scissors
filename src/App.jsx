@@ -1,6 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from "react";
+import Choices from "./components/Choices";
+import Scores from "./components/Scores";
+import Results from "./components/Results";
+import Buttons from "./components/Buttons";
 
 const App = () => {
   const [userChoice, setUserChoice] = useState();
@@ -49,22 +53,10 @@ const App = () => {
 
   return (
     <>
-      <h1 data-cy="user_score">{userScore}</h1>
-      <h1 data-cy="computer_score">{computerScore}</h1>
-      <h1 data-cy="user_choice">Your choice is: {userChoice}</h1>
-      <h1 data-cy="computerChoice">
-        Your Imaginary Friend chose: {computerChoice}
-      </h1>
-      <h1 data-cy="results">{result}</h1>
-      <button data-cy="rock_btn" onClick={() => handleClick("Rock")}>
-        Rock
-      </button>
-      <button data-cy="paper_btn" onClick={() => handleClick("Paper")}>
-        Paper
-      </button>
-      <button data-cy="scissors_btn" onClick={() => handleClick("Scissors")}>
-        Scissors
-      </button>
+      <Scores userScore={userScore} computerScore={computerScore} />
+      <Choices userChoice={userChoice} computerChoice={computerChoice} />
+      <Results result={result} />
+      <Buttons handleClick={handleClick} />
     </>
   );
 };
