@@ -28,22 +28,18 @@ const App = () => {
   };
 
   const findOutWhoIsTheWinner = () => {
-    if (userChoice === "Rock" && computerChoice === "Scissors") {
+    if (
+      (userChoice === "Rock" && computerChoice === "Scissors") ||
+      (userChoice === "Scissors" && computerChoice === "Paper") ||
+      (userChoice === "Paper" && computerChoice === "Rock")
+    ) {
       setResult("Congratulations! You won!");
       setUserScore(userScore + 1);
-    } else if (userChoice === "Paper" && computerChoice === "Scissors") {
-      setResult("You lost");
-      setComputerScore(computerScore + 1);
-    } else if (userChoice === "Scissors" && computerChoice === "Paper") {
-      setResult("Congratulations! You won!");
-      setUserScore(userScore + 1);
-    } else if (userChoice === "Rock" && computerChoice === "Paper") {
-      setResult("You lost");
-      setComputerScore(computerScore + 1);
-    } else if (userChoice === "Paper" && computerChoice === "Rock") {
-      setResult("Congratulations! You won!");
-      setUserScore(userScore + 1);
-    } else if (userChoice === "Scissors" && computerChoice === "Rock") {
+    } else if (
+      (userChoice === "Paper" && computerChoice === "Scissors") ||
+      (userChoice === "Rock" && computerChoice === "Paper") ||
+      (userChoice === "Scissors" && computerChoice === "Rock")
+    ) {
       setResult("You lost");
       setComputerScore(computerScore + 1);
     } else {
