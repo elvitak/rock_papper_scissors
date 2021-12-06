@@ -42,10 +42,10 @@ You can clone this repo and run `yarn`
 
 ## Acknowledgements
 
-Craft Academy course material.
-Previous students from Craft Academy. Their code helped me understand how I could stub computers' choice.
-Cypress documentation also was used for testing computers' choice.
-[YouTube](https://www.youtube.com/watch?v=TIefmKAWMTo&list=WL&index=1)
+- Craft Academy course material.
+- Previous students from Craft Academy. Their code helped me understand how I could stub computers' choice.
+- Cypress documentation also was used for testing computers' choice. [Cypress Documentation](https://docs.cypress.io/api/commands/stub#Syntax)
+- [YouTube](https://www.youtube.com/watch?v=TIefmKAWMTo&list=WL&index=1)
 
 ## Updates/Improvements plans
 
