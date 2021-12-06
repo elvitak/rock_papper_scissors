@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from "react";
-import Choices from "./components/Choices";
-import Scores from "./components/Scores";
+import ScoresAndChoices from "./components/ScoresAndChoices";
 import Results from "./components/Results";
 import Buttons from "./components/Buttons";
+import "semantic-ui-css/semantic.min.css";
+import { Segment } from "semantic-ui-react";
 
 const App = () => {
   const [userChoice, setUserChoice] = useState();
@@ -48,12 +49,16 @@ const App = () => {
   };
 
   return (
-    <>
-      <Scores userScore={userScore} computerScore={computerScore} />
-      <Choices userChoice={userChoice} computerChoice={computerChoice} />
+    <Segment textAlign="center">
+      <ScoresAndChoices
+        userScore={userScore}
+        computerScore={computerScore}
+        userChoice={userChoice}
+        computerChoice={computerChoice}
+      />
       <Results result={result} />
       <Buttons handleClick={handleClick} />
-    </>
+    </Segment>
   );
 };
 

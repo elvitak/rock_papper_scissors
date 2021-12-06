@@ -1,10 +1,11 @@
 import React from "react";
+import { Header } from "semantic-ui-react";
 
 const Results = ({ result }) => {
   return (
-    <div>
-      <h1 data-cy="results">{result}</h1>
-    </div>
+    <Header as="h1" color="teal" data-cy="results">
+      {result}
+    </Header>
   );
 };
 
