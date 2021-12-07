@@ -46,4 +46,13 @@ describe("User", () => {
     cy.get("[data-cy=user_score]").should("contain", 0);
     cy.get("[data-cy=computer_score]").should("contain", 0);
   });
+
+  describe("sees right score", () => {
+    it("is expected to see right values when 2 identical moves are performed in a row", () => {
+      cy.get("[data-cy=paper_btn]").click();
+      cy.get("[data-cy=paper_btn]").click();
+      cy.get("[data-cy=user_score]").should("contain", 2);
+      cy.get("[data-cy=computer_score]").should("contain", 0);
+    });
+  });
 });
