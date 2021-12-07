@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-undef */
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ScoresAndChoices from "./components/ScoresAndChoices";
 import Results from "./components/Results";
 import Buttons from "./components/Buttons";
@@ -18,7 +18,10 @@ const App = () => {
   const [userScore, setUserScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
 
-  useEffect(() => {
+  const handleClick = (userChoice) => {
+    setUserChoice(userChoice);
+    const computerChoice = generateComputersChoice();
+    setComputerChoice(computerChoice);
     const winner = findOutWhoIsTheWinner(userChoice, computerChoice);
     if (winner === "USER") {
       setResult("Congratulations! You won!");
@@ -29,11 +32,6 @@ const App = () => {
     } else {
       setResult("It's a draw");
     }
-  }, [userChoice, computerChoice]);
-
-  const handleClick = (value) => {
-    setUserChoice(value);
-    setComputerChoice(generateComputersChoice());
   };
 
   return (
