@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Icon } from "semantic-ui-react";
 
-const Buttons = ({ handleClick }) => {
+const UserChoices = ({ handleClick }) => {
   return (
     <>
       <Button
@@ -41,4 +41,4 @@ const Buttons = ({ handleClick }) => {
   );
 };
 
-export default Buttons;
+export default UserChoices;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Header, Segment, Grid, Divider } from "semantic-ui-react";
 
-const ScoresAndChoices = ({
+const DisplayScoresAndChoices = ({
   userScore,
   computerScore,
   userChoice,
@@ -28,4 +28,4 @@ const ScoresAndChoices = ({
   );
 };
 
-export default ScoresAndChoices;
+export default DisplayScoresAndChoices;
