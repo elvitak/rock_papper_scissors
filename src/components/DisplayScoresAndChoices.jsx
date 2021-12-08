@@ -1,12 +1,31 @@
 import React from "react";
 import { Header, Segment, Grid, Divider } from "semantic-ui-react";
+import { findOutWhoIsTheWinner } from "../modules/gameLogic";
 
-const DisplayScoresAndChoices = ({
-  userScore,
-  computerScore,
-  userChoice,
-  computerChoice,
-}) => {
+const DisplayScoresAndChoices = ({ rounds }) => {
+  let userChoice;
+  let computerChoice;
+  let userScore = 0;
+  let computerScore = 0;
+
+  if (rounds.length !== 0) {
+    const lastRound = rounds[rounds.length - 1];
+
+    userChoice = lastRound.user;
+    computerChoice = lastRound.computer;
+
+    for (let i = 0; i < rounds.length; i++) {
+      const round = rounds[i];
+      const winner = findOutWhoIsTheWinner(round.user, round.computer);
+
+      if (winner === "USER") {
+        userScore += 1;
+      } else if (winner === "COMPUTER") {
+        computerScore += 1;
+      }
+    }
+  }
+
   return (
     <Segment>
       <Grid columns={2} relaxed="very">
@@ -23,7 +42,7 @@ const DisplayScoresAndChoices = ({
           </Header>
         </Grid.Column>
       </Grid>
-      <Divider vertical>And</Divider>
+      <Divider vertical>VS</Divider>
     </Segment>
   );
 };
