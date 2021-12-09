@@ -27,7 +27,7 @@ describe("User", () => {
     );
     cy.get("[data-cy=choice_history]").should(
       "contain",
-      "Paper vs Rock, Scissors vs Rock"
+      "Paper vs Rock Scissors vs Rock"
     );
   });
 });

@@ -4,8 +4,9 @@ import React, { useState } from "react";
 import DisplayScoresAndChoices from "./components/DisplayScoresAndChoices";
 import ResultsForCurrentRound from "./components/ResultsForCurrentRound";
 import UserChoices from "./components/UserChoices";
+import HistoryOfChoices from "./components/HistoryOfChoices";
 import "semantic-ui-css/semantic.min.css";
-import { Segment } from "semantic-ui-react";
+import { Segment, Grid } from "semantic-ui-react";
 import { generateComputersChoice } from "./modules/gameLogic";
 
 const App = () => {
@@ -18,11 +19,18 @@ const App = () => {
   };
 
   return (
-    <Segment textAlign="center">
-      <DisplayScoresAndChoices rounds={rounds} />
-      <ResultsForCurrentRound rounds={rounds} />
-      <UserChoices handleClick={handleClick} />
-    </Segment>
+    <Grid columns={2} relaxed="very">
+      <Grid.Column>
+        <Segment textAlign="center">
+          <DisplayScoresAndChoices rounds={rounds} />
+          <ResultsForCurrentRound rounds={rounds} />
+          <UserChoices handleClick={handleClick} />
+        </Segment>
+      </Grid.Column>
+      <Grid.Column>
+        <HistoryOfChoices rounds={rounds} />
+      </Grid.Column>
+    </Grid>
   );
 };
 
