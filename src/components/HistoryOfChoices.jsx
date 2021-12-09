@@ -5,10 +5,19 @@ const HistoryOfChoices = ({ rounds }) => {
 
   for (let i = 0; i < rounds.length; i++) {
     const round = rounds[i];
-    choiceHistory.push(`${round.user} vs ${round.computer} `);
+    choiceHistory.push(
+      <div>
+        {i + 1}: {round.user} vs {round.computer}
+      </div>
+    );
   }
 
-  return <div data-cy="choice_history">{choiceHistory}</div>;
+  return (
+    <>
+      <h5>History:</h5>
+      <div data-cy="choice_history">{choiceHistory}</div>
+    </>
+  );
 };
 
 export default HistoryOfChoices;

@@ -25,9 +25,11 @@ describe("User", () => {
       "contain",
       "Your Imaginary Friend chose: Rock"
     );
-    cy.get("[data-cy=choice_history]").should(
-      "contain",
-      "Paper vs Rock Scissors vs Rock"
-    );
+    cy.get("[data-cy=choice_history]")
+      .first()
+      .should("contain", "1: Paper vs Rock");
+    cy.get("[data-cy=choice_history]")
+      .last()
+      .should("contain", "2: Scissors vs Rock");
   });
 });

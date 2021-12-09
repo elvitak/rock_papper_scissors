@@ -20,14 +20,14 @@ const App = () => {
 
   return (
     <Grid columns={2} relaxed="very">
-      <Grid.Column>
+      <Grid.Column width={13}>
         <Segment textAlign="center">
           <DisplayScoresAndChoices rounds={rounds} />
           <ResultsForCurrentRound rounds={rounds} />
           <UserChoices handleClick={handleClick} />
         </Segment>
       </Grid.Column>
-      <Grid.Column>
+      <Grid.Column width={3}>
         <HistoryOfChoices rounds={rounds} />
       </Grid.Column>
     </Grid>
