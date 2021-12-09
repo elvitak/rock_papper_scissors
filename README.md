@@ -46,6 +46,7 @@ You can clone this repo and run `yarn`
 - Previous students from Craft Academy. Their code helped me understand how I could stub computers' choice.
 - Cypress documentation also was used for testing computers' choice. [Cypress Documentation](https://docs.cypress.io/api/commands/stub#Syntax)
 - [YouTube](https://www.youtube.com/watch?v=TIefmKAWMTo&list=WL&index=1)
+- [Stackoverflow - Push method in React Hooks](https://stackoverflow.com/questions/54676966/push-method-in-react-hooks-usestate)
 
 ## Updates/Improvements plans
 
