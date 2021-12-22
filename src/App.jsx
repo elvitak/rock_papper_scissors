@@ -7,7 +7,7 @@ import UserChoices from "./components/UserChoices";
 import HistoryOfChoices from "./components/HistoryOfChoices";
 import "semantic-ui-css/semantic.min.css";
 import { Segment, Grid } from "semantic-ui-react";
-import { generateComputersChoice } from "./modules/gameLogic";
+import { generateComputersChoice } from "./modules/computerChoice";
 
 const App = () => {
   const [rounds, setRounds] = useState([]);

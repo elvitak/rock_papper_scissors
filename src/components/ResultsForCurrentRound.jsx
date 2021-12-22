@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Header } from "semantic-ui-react";
-import { findOutWhoIsTheWinner } from "../modules/gameLogic";
+import { findOutWhoIsTheWinner } from "../modules/winner";
 
 const ResultsForCurrentRound = ({ rounds }) => {
   let result = "";

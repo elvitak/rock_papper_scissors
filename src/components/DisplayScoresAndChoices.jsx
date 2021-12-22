@@ -1,6 +1,6 @@
 import React from "react";
 import { Header, Segment, Grid, Divider } from "semantic-ui-react";
-import { findOutWhoIsTheWinner } from "../modules/gameLogic";
+import { findOutWhoIsTheWinner } from "../modules/winner";
 
 const DisplayScoresAndChoices = ({ rounds }) => {
   let userChoice;
